@@ -47,3 +47,9 @@ show_error_codes = true
 pretty = true
 
 ##############################
+# Ruff
+
+[tool.ruff]
+
+# disallow print statements
+select = ["PLR2004"]

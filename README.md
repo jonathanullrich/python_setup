@@ -4,10 +4,6 @@ This repo can be used as a reproducible setup for production python code.
 
 Use Pylance in VSCode for autocomplete. Use mypy for type checking as part of the CI process
 
-## Development setup
-
-In VSCode install the python extension - it comes with Pylance for Intellisense.
-
 ## Dependency management
 
 ```bash
@@ -40,4 +36,8 @@ ruff format
 
 ### Why not use Pyright
 
-- installation requires node (https://microsoft.github.io/pyright/#/installation) - the community pip version seems like a bad compromise (https://pypi.org/project/pyright/)
+- Installation requires node (https://microsoft.github.io/pyright/#/installation) - the community pip version seems to be a bad compromise (https://pypi.org/project/pyright/)
+
+### Why not use Flake8 (linting) or Blake (formatting)
+
+- Ruff does both

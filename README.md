@@ -4,7 +4,13 @@ This repo can be used as a reproducible setup for production python code.
 
 Use Pylance in VSCode for autocomplete. Run mypy (type checking) and ruff (linting, formatting) before committing.
 
-If commit triggers ruff formatter, add and commit again.
+If commit triggers ruff formatter, add and commit again. Ideally, it looks like this:
+
+```bash
+mypy.....................................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
+```
 
 ## Setup
 

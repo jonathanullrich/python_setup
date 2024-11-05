@@ -17,5 +17,4 @@ with Image.open("example.jpg") as img:
 
 
 def add(a: float, b: float) -> float:
-    print(a)
     return a + b

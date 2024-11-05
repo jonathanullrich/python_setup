@@ -6,6 +6,12 @@ Use Pylance in VSCode for autocomplete. Run mypy (type checking) and ruff (linti
 
 If commit triggers ruff formatter, commit again.
 
+## Setup
+
+```bash
+bash setup.sh
+```
+
 ## Dependency management
 
 ```bash

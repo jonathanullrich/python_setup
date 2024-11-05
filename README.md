@@ -1,8 +1,14 @@
-# Python Production Project Setup
+# Python Project Setup
 
 This repo can be used as a reproducible setup for production python code.
 
-Use Pylance in VSCode for autocomplete. Use mypy for type checking as part of the CI process
+Use Pylance in VSCode for autocomplete. Run mypy (type checking) and ruff (linting, formatting) before committing.
+
+If commit triggers ruff formatter, commit again. Ideally your console looks like:
+
+```bash
+
+```
 
 ## Dependency management
 
@@ -16,7 +22,7 @@ pip freeze > requirements.txt
 
 ## Type checking
 
-[mypy](https://github.com/python/mypy)
+[mypy](https://github.com/python/mypy). Configured in pyproject.toml
 
 ```bash
 mypy .
@@ -24,7 +30,7 @@ mypy .
 
 ## Linting and formatting
 
-[Ruff](https://github.com/astral-sh/ruff)
+[Ruff](https://github.com/astral-sh/ruff). Out-of-the-box default config.
 
 ```bash
 ruff check
@@ -32,7 +38,16 @@ ruff format
 ```
 
 ## CI
-[Pre-commit](https://github.com/pre-commit/pre-commit)
+
+[Pre-commit](https://github.com/pre-commit/pre-commit). Configured .pre-commit-config.yaml.
+
+**IMPORTANT** Installing the commit hooks might be needed (https://github.com/pre-commit/mirrors-mypy and https://github.com/astral-sh/ruff-pre-commit)
+
+```bash 
+pre-commit install
+```
+
+---
 
 ### Why not use Pyright
 
@@ -41,3 +56,7 @@ ruff format
 ### Why not use Flake8 (linting) or Blake (formatting)
 
 - Ruff does both
+
+### Example
+
+https://git.ptw.maschinenbau.tu-darmstadt.de/eta-fabrik/public/eta-utility/-/blob/development/.pre-commit-config.yaml

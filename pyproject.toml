@@ -1,0 +1,54 @@
+##############################
+# MYPY
+#https://mypy.readthedocs.io/en/stable/config_file.html#platform-configuration
+[tool.mypy]
+
+# Disallow function definitions without type annotations for arguments and return types
+disallow_untyped_defs = true
+
+# Disallow partial type annotations in function signatures (all or none)
+disallow_incomplete_defs = true
+
+# Disallow using `Any` as the type for imports that lack type hints
+disallow_any_unimported = false
+
+# Disallow using `Any` as the type in expressions
+disallow_any_expr = false
+
+# Disallow using `Any` as the type in functions with decorators
+disallow_any_decorated = false
+
+# Do not implicitly assume `Optional` for arguments that can be `None`;
+# explicitly use `Optional` for nullable types
+no_implicit_optional = true
+
+# Type-check the bodies of functions that have no type annotations
+check_untyped_defs = true
+
+# Enforce strict handling of `Optional` types (ensures correct usage of `None` and `Optional`)
+strict_optional = true
+
+# Warn when a function's return type is inferred as `Any`
+warn_return_any = true
+
+# Warn when `# type: ignore` comments are unnecessary
+warn_unused_ignores = true
+
+# Warn when a cast to a specific type is redundant or unnecessary
+warn_redundant_casts = true
+
+# Warn about code that is unreachable (helps detect logical errors)
+warn_unreachable = true
+
+# Display specific error codes in the output to make debugging easier
+show_error_codes = true
+
+# Pretty-print error messages for improved readability
+pretty = true
+
+##############################
+# RUFF
+[tool.ruff.lint]
+
+
+[tool.ruff.format]

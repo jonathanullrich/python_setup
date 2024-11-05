@@ -52,4 +52,4 @@ pretty = true
 [tool.ruff]
 
 # disallow print statements
-select = ["PLR2004"]
+select = ["ALL"]

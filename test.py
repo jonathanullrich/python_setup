@@ -14,3 +14,7 @@ with Image.open("example.jpg") as img:
 
     # Save the modified image
     resized_img.save("modified_image.jpg")
+
+
+def add(a: float, b: float) -> float:
+    return a + b

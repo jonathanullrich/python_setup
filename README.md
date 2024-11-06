@@ -2,16 +2,6 @@
 
 This repo can be used as a reproducible setup for production python code.
 
-Use Pylance in VSCode for autocomplete. Run mypy (type checking) and ruff (linting, formatting) before committing.
-
-If commit triggers ruff formatter, add and commit again. Ideally, it looks like this:
-
-```bash
-mypy.....................................................................Passed
-ruff.....................................................................Passed
-ruff-format..............................................................Passed
-```
-
 ## Setup
 
 ```bash
@@ -30,7 +20,7 @@ pip freeze > requirements.txt
 
 ## Type checking
 
-[mypy](https://github.com/python/mypy). Configured in pyproject.toml
+[mypy](https://github.com/python/mypy). Configured in pyproject.toml.
 
 ```bash
 mypy .
@@ -38,22 +28,38 @@ mypy .
 
 ## Linting and formatting
 
-[Ruff](https://github.com/astral-sh/ruff). Out-of-the-box default config.
+[Ruff](https://github.com/astral-sh/ruff). Configured in pyproject.toml. To be configured.
 
 ```bash
 ruff check
 ruff format
 ```
 
-## CI
+## Testing
 
-[Pre-commit](https://github.com/pre-commit/pre-commit). Configured .pre-commit-config.yaml.
+Trigger [PyTest](https://github.com/pytest-dev/pytest) manually.
+
+```bash
+pytest test.py
+```
+
+## Development
+
+Use Pylance in VSCode for autocomplete. Run mypy (type checking) and ruff (linting, formatting) before committing with [Pre-commit](https://github.com/pre-commit/pre-commit). Configured .pre-commit-config.yaml.
 
 **IMPORTANT** Installing the commit hooks might be needed (https://github.com/pre-commit/mirrors-mypy and https://github.com/astral-sh/ruff-pre-commit)
 
 ```bash 
 pre-commit install
 pre-commit autoupdate
+```
+
+If commit triggers ruff formatter, add and commit again. Ideally, it looks like this:
+
+```bash
+mypy.....................................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
 ```
 
 ---

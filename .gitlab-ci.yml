@@ -1,0 +1,18 @@
+# defines a pipeline job for building an docker image with kaniko and pushing it to the gitlab registry if it's on the main branch
+# https://docs.gitlab.com/ee/ci/docker/using_kaniko.html
+
+stages:
+  - build
+
+build_quasar:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:debug # The kaniko debug image is recommended because it has a shell, and a shell is required for an image to be used with GitLab CI/CD.
+    entrypoint: [""]
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:latest"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
